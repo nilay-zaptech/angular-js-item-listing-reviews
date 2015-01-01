@@ -1,4 +1,4 @@
-Angular-Js-Item-Listings & Reviews
+angular-js-item-listings & reviews
 ====================================================================================
 This will allow one to view Item listings on a page.
 Each one contains 3 Tabs:
@@ -14,3 +14,4 @@ You can write your new one with rating and submit. Before submit you can view in
 =======================================================================================
 
 Deploy the code on your localhost and run “index.html” to view output on web browser.
+=======
