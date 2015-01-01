@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html ng-app='example'>
+<head>
+<!--bootstrap.min.css-->
+<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+<!--custom css : style.css-->
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<!--use of ng-controller-->
+<body ng-controller="StoreController as store">
+	<h2 style="text-align:center;">Item Listing & Reviews</h2>
+	<ul class="list-group">
+		<li class="list-group-item" ng-repeat="product in store.products"> <!--ng-repeat-->
+			<h3> 
+				<product-title></product-title>	<!--use of directive-->
+			</h3>
+			<section ng-controller="PanelController as panel">
+			<div class="span12 text-center">
+				<ul class="nav nav-pills">
+					<li ng-class="{ active: panel.isSelected(1)}">
+					 <a href ng-click ="panel.selectTab(1)"> Description </a></li>
+
+					<li ng-class="{ active:panel.isSelected(2)}">
+					<a href ng-click ="panel.selectTab(2)"> Specifications </a></li>
+					
+					<li ng-class="{ active:panel.isSelected(3)}">
+					<a href ng-click ="panel.selectTab(3)"> Ratings & Reviews </a></li>
+				</ul>
+				</div>
+			<div class="panel"ng-show="panel.isSelected(1)">
+				<h4>Discription</h4>
+				<p> {{  product.description }} </p>				
+			</div>
+			<div class="panel"ng-show="panel.isSelected(2)" ng-repeat="spec in product.spec">
+				<h4>Specifications</h4>
+				<div> Engine Type {{  spec.engineType }} </div>	
+				<div> Fuel Economy {{  spec.fuel }} </div>							
+			</div>
+			<div class="panel"ng-show="panel.isSelected(3)">
+				<h4>Ratings & Reviews</h4>
+				<div ng-repeat="reviews in product.review">
+				<b> Ratings : {{reviews.stars}} </b><br><br/>
+				<p>{{reviews.body}}</p><br>
+				By : {{reviews.author}}<br><hr>
+				</div>
+
+				<review-form></review-form>
+			</div>
+			</section>	
+		</li>
+	</ul>
+<div>
+
+<!-- <button ng-show="store.product.canPurchase"> Add to Cart</button> -->
+
+</div> 
+<!--angular.min.js-->
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+<!--custom js : app.js-->
+<script type="text/javascript" src="app.js"></script>
+</body>
+
+</html>

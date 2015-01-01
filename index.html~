@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+
+
+<html ng-app>
+<body>
+<p> {{ 4 + 3 }}</p>
+<!-- <div ng-controller="StoreController as store">
+<h1> {{ store.product.model }} </h1>
+<h2> {{ store.product.price }} </h2>
+<p> {{ store.product.description }} </p>
+
+</div> -->
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+<script type="text/javascript" src="app.js"></script>
+</body>
+
+</html>
