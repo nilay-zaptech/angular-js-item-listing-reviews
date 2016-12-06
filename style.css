@@ -14,3 +14,14 @@
 
 	display: inline-block;
 }
+
+/*css*/
+.nav li a {
+  display: block;
+  font-size: 12px;
+  padding: 5px 7px;
+  position: relative;
+}
+h2{font-size:24px;}
+h3{font-size:20px;}
+.panel{margin:20px 0;}
